@@ -1,19 +1,19 @@
-// AdditionalStringPractice.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
-//
+#include "String.h"
 
-#include <iostream>
+int main() {
+    String myString;
 
-int main()
-{
-    std::cout << "Hello World!\n";
+    string original = "Hello, World!";
+    int start = 7;
+    int charsToReturn = 5;
+
+    string result = myString.substring(original, start, charsToReturn);
+
+    cout << "Original: " << original << endl;
+    cout << "Substring: " << result << endl;
+
+    string phrase = "Esto_es_un_texto_de_prueba";
+    cout << "Reverse Substring: " << myString.reverseSubstring(phrase, 15, 2) << endl;
+
+    return 0;
 }
-
-// Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
-// Depurar programa: F5 o menú Depurar > Iniciar depuración
-
-// Sugerencias para primeros pasos: 1. Use la ventana del Explorador de soluciones para agregar y administrar archivos
-//   2. Use la ventana de Team Explorer para conectar con el control de código fuente
-//   3. Use la ventana de salida para ver la salida de compilación y otros mensajes
-//   4. Use la ventana Lista de errores para ver los errores
-//   5. Vaya a Proyecto > Agregar nuevo elemento para crear nuevos archivos de código, o a Proyecto > Agregar elemento existente para agregar archivos de código existentes al proyecto
-//   6. En el futuro, para volver a abrir este proyecto, vaya a Archivo > Abrir > Proyecto y seleccione el archivo .sln
