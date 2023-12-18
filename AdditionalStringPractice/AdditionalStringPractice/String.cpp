@@ -90,3 +90,31 @@ string String::trim(string sentence, int charsToTrim) {
     }
     return substring(sentence, charsToTrim, length - 2 * charsToTrim);
 }
+
+int String::findLast(string sentence, string wordToFind) {
+    size_t found = sentence.rfind(wordToFind);
+    if (found != string::npos) {
+        cout << "La parte '" << wordToFind << "' se encuentra a partir del caracter " << static_cast<int>(found) << endl;
+        return static_cast<int>(found);
+    }
+    else {
+        cout << "'" << wordToFind << "' no fue encontrado" << endl;
+        return -1;
+    }
+}
+
+char String::findNaughtyStep(const string& original, const string& modified) {
+    size_t minLength = min(original.length(), modified.length());
+
+    for (size_t i = 0; i < minLength; ++i) {
+        if (original[i] != modified[i]) {
+            return modified[i]; 
+        }
+    }
+
+    if (original.length() < modified.length()) {
+        return modified.back();
+    }
+
+    return '\0';
+}

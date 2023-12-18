@@ -15,4 +15,6 @@ public:
 	string trimRight(string sentence, int charsToTrim);
 	string trimLeft(string sentence, int charsToTrim);
 	string trim(string sentence, int charsToTrim);
+	int findLast(string sentence, string wordToFind);
+	char findNaughtyStep(const string& original, const string& modified);
 };

@@ -26,5 +26,20 @@ int main() {
     cout << "Trim Left: \"" << myString.trimLeft(fullname, 7) << "\"" << endl;
     cout << "Trim: \"" << myString.trim(fullname, 1) << "\"" << endl;
 
+    string sentence = "erick figueroa elizondo";
+    int resultSentence = myString.findLast(sentence, "zon");
+
+    string original1 = "abcd";
+    string modified1 = "abcde";
+    cout << "Result 1: " << myString.findNaughtyStep(original1, modified1) << endl;
+
+    string original2 = "stepfor";
+    string modified2 = "stepor";
+    cout << "Result 2: " << myString.findNaughtyStep(original2, modified2) << endl;
+
+    string original3 = "abcde";
+    string modified3 = "abcde";
+    cout << "Result 3: " << myString.findNaughtyStep(original3, modified3) << endl;
+
     return 0;
 }
