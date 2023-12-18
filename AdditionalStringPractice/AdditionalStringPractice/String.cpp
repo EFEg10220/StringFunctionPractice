@@ -47,3 +47,46 @@ string String::reverseSubstring(string sentence, int start, int charsToReturn) {
 
     return result;
 }
+
+string String::left(string sentence, int charsToReturn) {
+    return substring(sentence, 0, charsToReturn);
+}
+
+string String::right(string sentence, int charsToReturn) {
+    int start = sentence.length() - charsToReturn;
+
+    if (start < 0) {
+        start = 0;
+    }
+    return substring(sentence, start, charsToReturn);
+}
+
+string String::trimRight(string sentence, int charsToTrim) {
+    int length = sentence.length();
+
+    if (charsToTrim > length) {
+        cerr << "El numero de caracteres a recortar es mayor" << endl;
+        charsToTrim = length;
+    }
+    return substring(sentence, 0, length - charsToTrim);
+}
+
+string String::trimLeft(string sentence, int charsToTrim) {
+    int length = sentence.length();
+
+    if (charsToTrim > length) {
+        cerr << "El numero de caracteres a recortar es mayor" << endl;
+        charsToTrim = length;
+    }
+    return substring(sentence, charsToTrim, length - charsToTrim);
+}
+
+string String::trim(string sentence, int charsToTrim) {
+    int length = sentence.length();
+
+    if (charsToTrim > length) {
+        cerr << "El numero de caracteres a recortar es mayor" << endl;
+        charsToTrim = length;
+    }
+    return substring(sentence, charsToTrim, length - 2 * charsToTrim);
+}
