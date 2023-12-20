@@ -25,4 +25,5 @@ public:
 	int countOfWhiteSpace(const string& phrase);
 	string transformWord(const string& word);
 	string inverseName(const string& fullname);
+	string decodeMessage(const string& message);
 };

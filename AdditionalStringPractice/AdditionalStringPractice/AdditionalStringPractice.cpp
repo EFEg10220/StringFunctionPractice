@@ -82,5 +82,14 @@ int main() {
     cout << "Nombre invertido: " << inverseName << endl;
 
 
+    string a = myString.decodeMessage("hola (odnum)");
+    cout << a << endl; 
+
+    string b = myString.decodeMessage("(olleh) (dlrow)!");
+    cout << b << endl; 
+
+    string c = myString.decodeMessage("sa(ualc atn)s is c(gnimmo)");
+    cout << c << endl;
+
     return 0;
 }

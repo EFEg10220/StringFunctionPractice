@@ -202,3 +202,28 @@ string String::inverseName(const string& fullname) {
 
     return result;
 }
+
+string String::decodeMessage(const string& message) {
+    string decodedMessage = message;
+    size_t startPos = decodedMessage.find('(');
+
+    while (startPos != string::npos) {
+        size_t endPos = decodedMessage.find(')', startPos);
+
+        if (endPos != string::npos) {
+            string reversedSubstring = reverseSubstring(decodedMessage, endPos - 1, startPos + 1);
+            cout << "\nReversed Substring: " << reversedSubstring << endl;
+
+            decodedMessage.replace(startPos, endPos - startPos + 1, reversedSubstring);
+            cout << "Decoded Message: " << decodedMessage << endl;
+
+            decodedMessage.erase(endPos - 1, 1);
+            decodedMessage.erase(startPos, 1);
+            cout << "Message after erasing: " << decodedMessage << endl;
+        }
+
+        startPos = decodedMessage.find('(', startPos);
+    }
+
+    return decodedMessage;
+}
