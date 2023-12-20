@@ -118,3 +118,87 @@ char String::findNaughtyStep(const string& original, const string& modified) {
 
     return '\0';
 }
+
+bool String::isValidEmail(const string& email) {
+    size_t posArroba = email.find('@');
+
+    if (posArroba == string::npos || posArroba == 0 || posArroba == email.length() - 1) {
+        return false;
+    }
+
+    size_t posPunto = email.find('.', posArroba);
+
+    if (posPunto == string::npos || posPunto == email.length() - 1) {
+        return false;
+    }
+
+    return true;
+}
+
+bool String::isPalindrome(string& text){
+    int start = 0;
+    int endText = text.length() - 1;
+
+    while (start < endText) {
+        if (text[start] != text[endText]) {
+            return false;
+        }
+        start++;
+        endText--;
+    }
+    return true;
+}
+
+int String::countOfWord(string& phrase){
+    stringstream ss(phrase);
+    string word;
+    int countWord = 0;
+
+    while (ss >> word) {
+        countWord++;
+    }
+
+    return countWord;
+}
+
+int String::countOfWhiteSpace(const string& phrase) {
+    int countWhiteSpace = 0;
+
+    for (char character : phrase) {
+        if (character == ' ') {
+            countWhiteSpace++;
+        }
+    }
+
+    return countWhiteSpace;
+}
+
+string String::transformWord(const string& word) {
+    if (word.empty()) {
+        return "";
+    }
+
+    string result = word;
+    result[0] = toupper(result[0]);
+
+    return result;
+}
+
+string String::inverseName(const string& fullname) {
+    istringstream iss(fullname);
+    string name, secondName, lastName, secondLastName;
+
+    iss >> name;
+    if (!iss.eof()) {
+        iss >> secondName;
+    }
+    iss >> lastName;
+    if (!iss.eof()) {
+        iss >> secondLastName;
+    }
+
+    string result = transformWord(lastName) + " " + transformWord(secondLastName) + " " + transformWord(secondName) + " " +
+        transformWord(name);
+
+    return result;
+}

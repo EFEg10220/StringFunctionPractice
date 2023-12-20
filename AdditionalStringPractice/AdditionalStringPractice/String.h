@@ -1,5 +1,7 @@
 #pragma once
 #include <iostream>
+#include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -17,4 +19,10 @@ public:
 	string trim(string sentence, int charsToTrim);
 	int findLast(string sentence, string wordToFind);
 	char findNaughtyStep(const string& original, const string& modified);
+	bool isValidEmail(const string& correo);
+	bool isPalindrome(string& text);
+	int countOfWord(string& phrase);
+	int countOfWhiteSpace(const string& phrase);
+	string transformWord(const string& word);
+	string inverseName(const string& fullname);
 };
